@@ -1,5 +1,5 @@
 %% Variables file!
-
+%tester
 
 %% load file
 %Filename (witout numbering, needs underscore after file name before numbering)
