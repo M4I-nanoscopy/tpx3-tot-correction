@@ -1,19 +1,16 @@
  %% normaliseCurve
-
-strength = 13; %smoothing (Not being used anymore)
-fromToT = 6; %start ToT %used to clear very small toT values
-toToT = 1024; % end ToT % could be used to set a final correction point
+'load variables'
+Variables % load Variables file
 %% 
-ToT_FF_T_BIG2 = ToT_FF_T_BIG; % just a way to make sure mistakes are recoverable
+%ToT_FF_T_BIG2 = ToT_FF_T_BIG; % just a way to make sure mistakes are recoverable
 
 %% set tables
 ToT_FF_T_BIG2(:,3,:) = 0; %can be removed in final setting
 ToT_FF_T_BIG2(:,4,:) = 0; % can be removed in final setting
 ToT_FF_size = (4 * 256 * 256); % should be calculated at a sooner point
 
-o = 1;
-
 %% creates a M = 1024 by 1 matrix
+o = 1;
 while o < toToT+1
     M(o,1) = o;
     o = o + 1;
@@ -87,18 +84,7 @@ while o < ToT_FF_size + 1
 end
 close(h)
 toc
-% COULD BE OLD BUT NEEDS TO BE RECOVERABLE
-% while o < ToT_FF_size
-%     if o == 1
-%         tic
-%     end
-%     D = ToT_FF_T_BIG2(:,5,o);
-%     Tryout3 
-%     o = o + 1;
-%     if o == 1000
-%         toc
-%     end
-% end
+
 
 
 %% Fix Matrix

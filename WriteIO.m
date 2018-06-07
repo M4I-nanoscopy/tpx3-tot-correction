@@ -1,4 +1,3 @@
-resultfile = '/Users/ericva/Desktop/Pinky/tot_correct_300kV_100.h5';
 dataset = '/tot_correction';
 tic
 

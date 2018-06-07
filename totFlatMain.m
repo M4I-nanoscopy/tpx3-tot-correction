@@ -1,13 +1,9 @@
 %% Variables
 
 'load variables'
-UserDIR = '/Users/ericva/Desktop/TikTok/FF100_out/';
-MainFILE = 'TOA-TOT-norm_145_100THL_20s';
+Variables % load Variables file
 SS = {' '};
-
-FileTYPE = '.h5';
 %%
-%h5disp('/Users/eric/Desktop/Pinky/FF_001_001.h5')
 
 ToT_FF_size = (4 * 256 * 256);
 ToT_FF_T_BIG = zeros(1024,5,ToT_FF_size);
@@ -37,10 +33,10 @@ iString = 30;
    
    jString = 0;
    
-
-%Hits = h5read('/Users/eric/Desktop/Pinky/FF_001_001.h5', '/hits');
 %% Calls the NormaliseCurve scripts to caclualte the ToT correctionmap
+
 normaliseCurve
+
 WriteIO
 
 
