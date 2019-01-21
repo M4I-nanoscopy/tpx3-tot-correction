@@ -2,7 +2,7 @@ dataset = '/tot_correction';
 tic
 
 if exist(resultfile, 'file') == 2
-  delete(resultfile);
+    delete(resultfile);
 end
 toc
 % Create dataset
@@ -18,3 +18,5 @@ toc
 tic
 h5write(resultfile, dataset, ToT_final_M);
 toc
+%%
+clearvars dataset DINKY k 
