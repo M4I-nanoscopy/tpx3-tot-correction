@@ -73,7 +73,13 @@ tic
 if UsePoly == 2
     AverageTest2_imp % Uses the Polynome to second power fitting (could be buggy)
 elseif UsePoly == 3
-    AverageTest_poly3 % Uses the Polynome to third power fitting (latest method) 
+    if RunCrossCorrect == 1
+        cout = "Running new Crosscorrect Average"
+        AverageTest_poly3_Cross % Uses the Polynome to third power fitting (latest method) 
+    elseif RunCrossCorrect == 0
+        cout = "Running old"
+        AverageTest_poly3
+    end
 else
     error('no curefitting "poly" was set')
 end
@@ -95,12 +101,19 @@ k = 0
 
 
 if new == 1
-
-    
-    Tryout4 % runs Tryout 4 (newest version)
+    PrepareCor
+    if RunCrossCorrect == 1
+        cout = "Running new Crosscorrection"
+       
+        Tryout4_Cross % Runs Tryout 4 Cross corrected
+    elseif RunCrossCorrect == 0
+        cout = "Running old correction"
+        Tryout4 % runs Tryout 4 (newest version)
+    end
     
     
     %clear AverageTable
+    
 else %outdated
     
     while o < ToT_FF_size + 1
