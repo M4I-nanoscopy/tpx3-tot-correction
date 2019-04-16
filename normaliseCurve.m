@@ -1,7 +1,7 @@
 %% normaliseCurve
 'load variables'
 Variables % load Variables file
-if isfile('CrossCorr.mat')
+if  exist('CrossCorr.mat', 'file') == 2
      % File exists.
      load('CrossCorr.mat')
 else
