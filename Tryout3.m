@@ -5,7 +5,7 @@ l = 1;
 syms x
 
 
-%% to find the nearest point on teh averagecurve
+%% to find the nearest point on the averagecurve
 i = 0;
 
 while i < 1024

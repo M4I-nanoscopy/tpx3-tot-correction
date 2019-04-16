@@ -35,30 +35,33 @@ ToT_FF_T_BIG2 = zeros(1024,5,ToT_FF_size);
 
 %% Load multiple files ToT hit files
 
-jString = 0;
+jString = 2;
 iString = NumberofFiles;
-count = 0;
+count = 1;
 
 
-while jString < iString
-    
+while jString < iString    
     tic
-    jString = jString +1;
+
     if jString == 2;
         yes = 'yes'
     else
+        jString
+    end
         jString2 = strcat(NumberingFormat,num2str(jString));
         jString2 = jString2(end-1:end);
         filename = char(strcat(UserDIR, MainFILE, '_', jString2, FileTYPE))
         data = h5read(filename, '/freq_tot');
-        count = count + jString;
+        
         if count == 1
             data2 = data;
         else
             data2 = data2 + data;
         end
         loady = toc
-    end
+    
+    count = count + jString;
+        jString = jString +1;
 end
 %% creates data_bases and basic info
 ToT_FF_T_BIG2(:,1,:) = data2(:,:);

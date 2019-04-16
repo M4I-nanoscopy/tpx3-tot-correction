@@ -1,15 +1,16 @@
 %% Variables file!
 %tester
 new = 1 % means it runs the newest fitting version; Suggested KEEP 1)
+RunCrossCorrect = 1 % run 0 for non cross-correct run 1 for cross-correct
 
 %% load file
 %Filename (witout numbering, needs underscore after file name before numbering)
-MainFILE = 'ikkrum20_freq_tot' % ('TOA-TOT-norm_145_50THL_20s_hits')
+MainFILE = 'FF' % ('TOA-TOT-norm_145_50THL_20s_hits')
 %Directory
-UserDIR = '/Users/ericva/Downloads/'
+UserDIR = '/Volumes/LACIESHARE/20190210/'
 FileTYPE = '.h5' % (.h5)
 NumberingFormat = '00000' % ('000000')
-NumberofFiles = 1
+NumberofFiles = 30
 
 
 %% Preperation'
@@ -17,10 +18,10 @@ NumberofFiles = 1
 strength = 5 %smoothing of curves over number of pixels for the Average curve.
 %very important removes ToT' of all datasets from being processed for
 %correction (13)
-fromToT = 3 %start ToT %used to clear very small toT values (6)
+fromToT = 3 %start ToT %used to clear very small toT values (3)
 toToT = 1024 % end ToT % could be used to set a final correction point (1024)
 
-outlierRemovalStrength = 0.05
+outlierRemovalStrength = 0.15
 
 minimumCounts = 30000 %minimum counts for a pixel to be considered for a correction 
 

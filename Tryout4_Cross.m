@@ -26,8 +26,13 @@ for ik = 1:ToT_FF_size
     if ToT_FF_T_BIG2(1,2,ik) > minimumCounts
         F = zeros(1024,4);
         for ikke = 1:1024
-            N = AverageTable(3,find(AverageTable(1,:) <= ToT_FF_T_BIG2(ikke,5,ik), 1, 'last' ));
+            if functionaliser_T(1,ik) == 0
+            N = AverageTable_NC(3,find(AverageTable_NC(1,:) <= ToT_FF_T_BIG2(ikke,5,ik), 1, 'last' ));
             F(ikke,1) = N;
+            elseif functionaliser_T(1,ik) == 1
+            N = AverageTable_C(3,find(AverageTable_C(1,:) <= ToT_FF_T_BIG2(ikke,5,ik), 1, 'last' ));
+            F(ikke,1) = N;
+            end
         end
         % waitbar info
         st = st + 1;
