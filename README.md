@@ -1,9 +1,6 @@
-## ToTCorrection
+## ToT Correction
 
-
-Added a Variables file. Please set all variables there.
-
-load output ToT hit_files with .h5 table
+Use `Variables.m` to set all variables
 
 
 
